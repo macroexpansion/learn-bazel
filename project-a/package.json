@@ -1,0 +1,13 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+	"start": "node index.js"
+  },
+  "dependencies": {
+    "mongoose": "^6.6.7",
+	"project-b": "workspace:*"
+  }
+}

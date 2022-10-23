@@ -1,0 +1,12 @@
+# link all npm packages into Bazel package containing the `package.json` file
+load("@npm_deps//:defs.bzl", "npm_link_all_packages")
+npm_link_all_packages(name = "node_modules")
+
+# run js
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
+js_binary(
+    name = "a",
+	chdir = package_name(),
+	data = ["//project-a:node_modules"],
+    entry_point = "index.js",
+)
